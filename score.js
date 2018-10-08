@@ -11,6 +11,32 @@ var gameOver = false;
 var winnerScore = 5;
 
 p1.addEventListener("click", function(){
+	playerOne();
+});
+
+p2.addEventListener("click", function(){
+	playerTwo();
+});
+
+reset.addEventListener("click", function(){
+	resetFunc();
+});
+
+input.addEventListener("change", function(){
+	span3.textContent=input.value;
+	winnerScore=Number(input.value);
+	resetFunc();
+});
+
+
+
+
+// ******   Funtion definitions *******
+
+
+
+
+function playerOne(){
 	if (!gameOver) {
 		p1ScoreValue++;
 		span1.textContent = p1ScoreValue;
@@ -19,9 +45,9 @@ p1.addEventListener("click", function(){
 			span1.classList.add("winner");
 		}
 	}
-});
+}
 
-p2.addEventListener("click", function(){
+function playerTwo(){
 	if (!gameOver) {
 		p2ScoreValue++;
 		span2.textContent = p2ScoreValue;
@@ -30,10 +56,9 @@ p2.addEventListener("click", function(){
 			span2.classList.add("winner");
 		}
 	}
-	
-});
+}
 
-reset.addEventListener("click", function(){
+function resetFunc(){
 	p1ScoreValue = 0;
 	p2ScoreValue = 0;
 	span1.textContent= p1ScoreValue;
@@ -41,9 +66,4 @@ reset.addEventListener("click", function(){
 	span1.classList.remove("winner");
 	span2.classList.remove("winner");
 	gameOver = false;
-});
-
-input.addEventListener("change", function(){
-	span3.textContent=input.value;
-	winnerScore=Number(input.value);
-});
+}
