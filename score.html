@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Score Game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="score.css">
 	<style type="text/css">
 		.winner {
 			color: green;
@@ -12,10 +14,14 @@
 <body>
 	<h1><span id="span1">0</span> to <span id="span2">0</span></h1>
 	<p>playing till : <span id="span3">5</span></p>
-	<input type="number" name="">
-	<button id="btn-p1">Player 1</button>
-	<button id="btn-p2">Player 2</button>
-	<button id="reset">reset</button>
+	
+	<input type="number" name=""> <br>
+	<button id="btn-p1" class="btn btn-primary">Player 1</button>
+	<button id="btn-p2" class="btn btn-primary">Player 2</button>
+	<button id="reset" class="btn btn-danger">reset</button>
+	
+	<h4>Instruction :</h4>
+	<p>The one who gets <span id="span4">5</span> points first is the winner <br>All the Best</p>
 
 	<script type="text/javascript" src="js/score.js"></script>
 </body>
