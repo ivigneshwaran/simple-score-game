@@ -5,10 +5,15 @@ var span2 =document.querySelector("#span2");
 var reset =document.querySelector("#reset");
 var input =document.querySelector("input");
 var span3 =document.querySelector("#span3");
+var sapn4 =document.querySelector("#span4");
 var p1ScoreValue = 0;
 var p2ScoreValue = 0;
 var gameOver = false;
 var winnerScore = 5;
+var playerName1 = prompt("What's the name of Player 1?");
+p1.textContent=playerName1;
+var playerName2 = prompt("What's the name of Player 2?");
+p2.textContent=playerName2;
 
 p1.addEventListener("click", function(){
 	playerOne();
@@ -23,8 +28,9 @@ reset.addEventListener("click", function(){
 });
 
 input.addEventListener("change", function(){
-	span3.textContent=input.value;
-	winnerScore=Number(input.value);
+	span3.textContent=this.value;
+	span4.textContent=this.value;
+	winnerScore=Number(this.value);
 	resetFunc();
 });
 
@@ -43,6 +49,7 @@ function playerOne(){
 		if (p1ScoreValue === winnerScore) {
 			gameOver = !gameOver;
 			span1.classList.add("winner");
+			alert(playerName1 + " Wins");
 		}
 	}
 }
@@ -54,6 +61,7 @@ function playerTwo(){
 		if (p2ScoreValue === winnerScore) {
 			gameOver = true;
 			span2.classList.add("winner");
+			alert(playerName2 + " Wins");
 		}
 	}
 }
